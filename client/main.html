@@ -1,41 +1,16 @@
+<template name="ApplicationLayout">
 <head>
   <title>textcircle</title>
-  <style type="text/css"></style>
   <!--<link rel="stylesheet" type="text/css" href="/bootstrap_sketchy.css">-->
-</head>
+</head>  
 
-<body>
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">TextCircle</a>
-      <p class="navbar-text navbar-right">
-        {{> loginButtons align="right" }}
-      </p>
-    </div>
-  </nav>
-  <div class="container" style="margin-top:50px;">
-    {{> date_display}}
-    <div class="row">
-      <div class="col-md-6 col-xs-12">
-        {{> editor}}
-      </div>
-      <div class="col-md-6 col-xs-12">
-        {{> viewer}}
-      </div>
-    </div>  	
-  </div>
-  
+ {{>yield "header"}}
 
-  
-</body>
-<template name="date_display">
-<h1>TIME:</h1>{{current_date}}
+ {{>yield "main"}} 
 </template>
-<template name="editor">
-  {{>sharejsCM docid=doc_id onRender=config id="editor"}}
-</template>
-<template name="viewer">
-  <iframe id="viewer_iframe">
-    
-  </iframe>
-</template>
+
+
+
+
+
+
